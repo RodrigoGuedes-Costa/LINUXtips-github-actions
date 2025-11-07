@@ -130,9 +130,9 @@ jobs:
       - name: "Parar servidor"
         if: always()
         run: |
-          if [ ! -z "$SERVER_PID" ]; then
-            kill $SERVER_PID || true
-          fi
+          echo "if [ ! -z "$SERVER_PID" ]; then"
+            echo "kill $SERVER_PID || true"
+          echo "fi"
           
   challenge-complete:
     name: "Desafio Nível 1 - Concluído!"
