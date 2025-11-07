@@ -127,12 +127,12 @@ jobs:
           curl -f http://localhost:3000/health || exit 1
           echo "Health check passou!"
           
-      # - name: "Parar servidor"
-      #   if: always()
-      #   run: |
-      #     if [ ! -z "$SERVER_PID" ]; then
-      #       kill $SERVER_PID || true
-      #     fi
+      - name: "Parar servidor"
+        if: always()
+        run: |
+          if [ ! -z "$SERVER_PID" ]; then
+            kill $SERVER_PID || true
+          fi
           
   challenge-complete:
     name: "Desafio Nível 1 - Concluído!"
